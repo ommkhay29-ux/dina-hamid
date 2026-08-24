@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Undangan Pernikahan — Dina &amp; Hamid</title>
+<meta name="description" content="Undangan pernikahan digital Dina & Hamid — Sabtu, 29 Agustus 2026">
+
+<!-- Fonts: Cormorant Garamond (display, wide-tracked caps) + EB Garamond (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ GLOBAL VIDEO BACKGROUND ============ -->
+<video id="bgVideo" class="global-bg" autoplay muted loop playsinline preload="auto"
+       poster="assets/img/bg-alley.jpg">
+  <source src="assets/video/bg-alley.mp4" type="video/mp4">
+</video>
+
+<section id="cover" class="cover">
+  <div class="cover__scrim"></div>
+  <div class="cover__pennants" aria-hidden="true"></div>
+
+  <div class="cover__content">
+    <p class="eyebrow">The Wedding Of</p>
+    <h1 class="display-huge">Dina &amp; Hamid</h1>
+    <p class="cover__date">Sabtu, 29 Agustus 2026</p>
+
+    <div class="cover__guest">
+      <p class="eyebrow eyebrow--sm">Kepada Yth.</p>
+      <p class="guest-name" id="guestName">Bapak/Ibu/Saudara/i</p>
+      <p class="cover__note">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk
+        berkenan hadir dan memberikan doa restu pada acara pernikahan kami.</p>
+      <button id="openInvitation" class="btn btn--outline">Buka Undangan</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAIN INVITATION (hidden until opened) ============ -->
+<div id="invitation" class="invitation" hidden>
+
+  <div class="progress-rail" aria-hidden="true"><span id="progressFill"></span></div>
+
+  <!-- floating music toggle -->
+  <button id="musicToggle" class="music-toggle" aria-label="Putar / jeda musik" aria-pressed="false">
+    <span class="music-toggle__dot"></span>
+  </button>
+  <audio id="bgAudio" loop preload="none">
+    <source src="assets/audio/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ===== 1. Ayat ===== -->
+  <section class="panel panel--verse">
+    <div class="panel__scrim"></div>
+    <p class="eyebrow reveal">The Wedding Of</p>
+    <h2 class="display-lg reveal">Dina &amp; Hamid</h2>
+    <p class="panel__date reveal">Sabtu, 29 Agustus 2026</p>
+    <div class="pennant-divider reveal" aria-hidden="true">✦</div>
+    <blockquote class="verse reveal">
+      &ldquo;Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+      pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan
+      merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan
+      sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda
+      (kebesaran Allah) bagi kaum yang berpikir.&rdquo;
+    </blockquote>
+    <p class="verse__source reveal">Q.S Ar-Rum : 21</p>
+  </section>
+
+  <!-- ===== 2. Mempelai (Bride & Groom) ===== -->
+  <section class="panel panel--profile" id="brideSection">
+    <div class="profile__photo" style="background-image:url('assets/img/bride.jpg')"></div>
+    <div class="profile__card reveal">
+      <p class="eyebrow">The Bride</p>
+      <h3 class="display-md">Maudina Adam<br>A.Md.Gz</h3>
+      <hr class="rule">
+      <p class="profile__label">Putri Kedua Dari</p>
+      <p class="profile__parents">Bapak Adam Hasyim &amp; Ibu Elfira</p>
+      <a class="chip" href="https://instagram.com/maudina.adam" target="_blank" rel="noopener">
+        <span class="chip__icon">◎</span> maudina.adam
+      </a>
+    </div>
+  </section>
+
+  <section class="panel panel--profile" id="groomSection">
+    <div class="profile__photo" style="background-image:url('assets/img/groom.jpg')"></div>
+    <div class="profile__card reveal">
+      <p class="eyebrow">The Groom</p>
+      <h3 class="display-md">Sertu Hamid<br>Tuharea</h3>
+      <hr class="rule">
+      <p class="profile__label">Putra Keempat Dari</p>
+      <p class="profile__parents">Bapak Umar Tuharea &amp; Ibu Mariam Tasijawa</p>
+      <a class="chip" href="https://instagram.com/tuharea26genatix" target="_blank" rel="noopener">
+        <span class="chip__icon">◎</span> tuharea26genatix
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 3. Journey of Love ===== -->
+  <section class="panel panel--story">
+    <div class="panel__scrim panel__scrim--dark"></div>
+    <p class="eyebrow reveal">Journey Of Love</p>
+    <h2 class="display-lg reveal">Dina and Hamid</h2>
+
+    <div class="story-list">
+      <div class="story-item reveal">
+        <h4 class="story-item__title">Awal Kisah</h4>
+        <p class="story-item__text">Tidak ada yang kebetulan di dunia ini. Semua sudah tersusun
+          rapih oleh Sang Maha Kuasa, kita tidak bisa memilih kepada siapa kita akan jatuh cinta.
+          Kami pertama kali bertemu karena dikenalkan oleh teman kami. Pertemuan yang awalnya
+          canggung justru menjadi langkah pertama bagi dua hati yang sebelumnya tak pernah saling
+          tahu. Tak ada janji manis saat itu, hanya percakapan kecil yang entah bagaimana terasa
+          hangat sejak awal.</p>
+      </div>
+      <div class="story-item reveal">
+        <h4 class="story-item__title">Pendekatan</h4>
+        <p class="story-item__text">Dahulu, kisah kami terhenti sebelum sempat menemukan iramanya.
+          Ada jarak yang memisahkan, mungkin karena kedewasaan yang belum matang, waktu yang belum
+          tepat, atau keadaan yang memaksa untuk melangkah ke arah berbeda. Kini, takdir membawa
+          kita kembali ke titik temu yang sama, namun sebagai dua pribadi yang berbeda.</p>
+      </div>
+      <div class="story-item reveal">
+        <h4 class="story-item__title">Lamaran</h4>
+        <p class="story-item__text">Kehendak yang menuntun kami pada sebuah ikatan yang tidak
+          disangka, hingga akhirnya membawa kami pada ikatan suci yang dicintai-Nya. Kami
+          melangsungkan lamaran pada bulan Juni 2026.</p>
+      </div>
+      <div class="story-item reveal">
+        <h4 class="story-item__title">Pernikahan</h4>
+        <p class="story-item__text">Kami tidak mencari kesempurnaan, tapi saling melengkapi
+          kekurangan. Setelah melewati ombak, badai, dan angin yang begitu kencang, sampailah di
+          titik ini. Hari ini bukan hanya awal dari lembaran baru, tetapi juga peneguh cinta yang
+          ingin kami jaga selamanya dalam ikatan pernikahan — dan inilah janji kami untuk hari ini
+          dan selamanya.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Save The Date ===== -->
+  <section class="panel panel--date">
+    <div class="panel__scrim"></div>
+    <h2 class="display-lg reveal">Save The Date</h2>
+    <p class="panel__quote reveal">&ldquo;Pernikahan adalah ibadah, dan setiap ibadah bermuara
+      pada cinta-Nya sebagai tujuan. Sudah sewajarnya setiap upaya meraih cinta-Nya dilakukan
+      dengan sukacita.&rdquo;</p>
+
+    <div class="countdown reveal" id="countdown">
+      <div class="countdown__item"><span id="cdDays">00</span><small>Hari</small></div>
+      <div class="countdown__item"><span id="cdHours">00</span><small>Jam</small></div>
+      <div class="countdown__item"><span id="cdMinutes">00</span><small>Menit</small></div>
+      <div class="countdown__item"><span id="cdSeconds">00</span><small>Detik</small></div>
+    </div>
+
+    <button id="saveDateBtn" class="btn btn--outline reveal">Simpan Tanggal</button>
+
+    <div class="event-card reveal">
+      <p class="eyebrow eyebrow--sm">Save Our Date</p>
+      <h3 class="display-md">Akad</h3>
+      <p class="event-card__when">Sabtu, 29 Agustus 2026<br>09.00 – 10.00 WIT</p>
+      <p class="event-card__where">Gedung Azhari Al-Fatah<br>Kel. Honipopu, Sirimau, Kota Ambon</p>
+      <a class="btn btn--ghost" target="_blank" rel="noopener"
+         href="https://maps.google.com/?q=Gedung+Azhari+Al-Fatah+Ambon">Google Maps</a>
+    </div>
+
+    <div class="event-card reveal">
+      <p class="eyebrow eyebrow--sm">Save Our Date</p>
+      <h3 class="display-md">Resepsi</h3>
+      <p class="event-card__when">Sabtu, 29 Agustus 2026<br>11.00 – 14.00 WIT</p>
+      <p class="event-card__where">Gedung Azhari Al-Fatah<br>Kel. Honipopu, Sirimau, Kota Ambon</p>
+      <a class="btn btn--ghost" target="_blank" rel="noopener"
+         href="https://maps.google.com/?q=Gedung+Azhari+Al-Fatah+Ambon">Google Maps</a>
+    </div>
+  </section>
+
+  <!-- ===== 5. Our Moment (gallery + video) ===== -->
+  <section class="panel panel--moment">
+    <div class="panel__scrim panel__scrim--dark"></div>
+    <h2 class="display-lg reveal">Our Moment</h2>
+    <p class="panel__quote reveal">&ldquo;I was created in time to fill your time, and I use all
+      the time in my life to love you.&rdquo;</p>
+    <p class="panel__credit reveal">Photo &amp; Video by Vevia &amp; Azmi</p>
+
+    <div class="video-frame reveal" id="videoFrame">
+      <!-- Replace YOUTUBE_ID in script.js (CONFIG.youtubeId) -->
+      <div class="video-frame__placeholder" id="videoPlaceholder">
+        <span>▶</span>
+        <p>Video Prewedding</p>
+      </div>
+    </div>
+
+    <div class="gallery reveal" id="gallery">
+      <!-- populated by script.js from CONFIG.gallery, falls back to placeholders -->
+    </div>
+  </section>
+
+  <!-- ===== 6. RSVP & Wishes ===== -->
+  <section class="panel panel--rsvp">
+    <div class="panel__scrim"></div>
+    <blockquote class="verse reveal">&ldquo;Menikah itu nasib, jodoh itu takdir. Kamu bisa
+      berencana menikah dengan siapa, tapi kamu tidak bisa melawan takdir Allah SWT dengan siapa
+      kamu akan berjodoh.&rdquo;</blockquote>
+    <p class="verse__source reveal">Dina &amp; Hamid</p>
+
+    <h2 class="display-lg reveal">RSVP &amp; Wishes</h2>
+    <p class="panel__lead reveal">Bagi tamu undangan yang akan hadir di acara pernikahan kami,
+      silakan kirimkan konfirmasi kehadiran dengan mengisi form berikut:</p>
+
+    <form id="rsvpForm" class="rsvp-form reveal">
+      <label class="field">
+        <span class="field__label">Nama</span>
+        <input type="text" id="rsvpName" name="name" placeholder="Nama lengkap" required>
+      </label>
+
+      <fieldset class="field">
+        <legend class="field__label">Konfirmasi Kehadiran</legend>
+        <div class="attend-toggle">
+          <label class="attend-option">
+            <input type="radio" name="attend" value="Hadir" checked>
+            <span>Hadir</span>
+          </label>
+          <label class="attend-option">
+            <input type="radio" name="attend" value="Tidak Hadir">
+            <span>Tidak Hadir</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <label class="field">
+        <span class="field__label">Doa &amp; Ucapan</span>
+        <textarea id="rsvpMessage" name="message" rows="4" placeholder="Tuliskan doa & ucapan untuk kedua mempelai..." required></textarea>
+      </label>
+
+      <button type="submit" class="btn btn--solid">Kirim</button>
+    </form>
+
+    <div class="wishes reveal" id="wishesList" aria-live="polite"></div>
+    <div class="wishes-pager" id="wishesPager"></div>
+  </section>
+
+  <!-- ===== 7. Wedding Gift + Thank You ===== -->
+  <section class="panel panel--gift">
+    <div class="panel__scrim"></div>
+    <div class="gift-photo reveal" style="background-image:url('assets/img/couple-1.jpg')"></div>
+
+    <h2 class="display-lg reveal">Wedding Gift</h2>
+    <p class="panel__lead reveal">Tanpa mengurangi rasa hormat bagi tamu yang ingin mengirimkan
+      hadiah kepada kami, bisa melalui nomor rekening di bawah ini.</p>
+
+    <button id="giftToggle" class="btn btn--outline reveal" aria-expanded="false">E-Amplop</button>
+
+    <div class="gift-panel" id="giftPanel" hidden>
+      <!-- Edit bank accounts in CONFIG.giftAccounts (script.js) -->
+      <div class="gift-account">
+        <p class="gift-account__bank">Bank BCA</p>
+        <p class="gift-account__number">1234567890 <button class="copy-btn" data-copy="1234567890">Salin</button></p>
+        <p class="gift-account__name">a.n. Maudina Adam</p>
+      </div>
+      <div class="gift-account">
+        <p class="gift-account__bank">Bank Mandiri</p>
+        <p class="gift-account__number">0987654321 <button class="copy-btn" data-copy="0987654321">Salin</button></p>
+        <p class="gift-account__name">a.n. Sertu Hamid Tuharea</p>
+      </div>
+    </div>
+
+    <hr class="rule rule--wide reveal">
+
+    <h2 class="display-md reveal">Thank You For Your Attendance</h2>
+    <p class="panel__lead reveal">Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
+      Bapak/Ibu/Saudara/i berkenan hadir di hari bahagia kami.</p>
+  </section>
+
+  <!-- ===== 8. Closing ===== -->
+  <section class="panel panel--closing">
+    <div class="panel__scrim panel__scrim--dark"></div>
+    <h2 class="display-lg reveal">Dina &amp; Hamid</h2>
+    <div class="closing-photo reveal" style="background-image:url('assets/img/couple-2.jpg')"></div>
+    <p class="closing-note reveal">Terima kasih telah menjadi bagian dari hari bahagia kami.</p>
+  </section>
+
+</div>
+
+<!-- Firebase (compat SDK, tanpa perlu npm/build tools) -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>
